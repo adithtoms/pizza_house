@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-var mongo_url="mongodb+srv://adithtoms:hiHNPdfYtl3uYwRg@cluster0.ufs2fwk.mongodb.net/pizza_house"
+var mongo_url=""
 
 mongoose.connect(mongo_url,{useUnifiedTopology:true, useNewUrlParser:true})
 
