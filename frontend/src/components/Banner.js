@@ -1,45 +1,48 @@
 import React from 'react'
-import pizzaa from '../assets/images/pizzaa.jpg'
+import pizza2 from '../assets/images/pizza2.jpg'
+import pizza3 from '../assets/images/pizza3.jpg'
+import pizza1 from '../assets/images/pizza1.jpg'
 import Carousel from 'react-bootstrap/Carousel';
+import { Button } from 'react-bootstrap';
 
 function Banner() {
   return (
     <Carousel slide={false}>
-      <Carousel.Item>
+      <Carousel.Item style={{maxHeight:"600px",position:"relative"}}>
         <img
           className="d-block w-100"
-          src={pizzaa}
+          src={pizza2}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption style={{position:"absolute",top:"20%",left:"10px"}}>
+          <h1 style={{color:"smokewhite",fontWeight:"bolder", fontFamily:"cursive"}}>Experiencing a rough day? <br/> Here, take a slice!</h1>
+          <Button className='bg-warning py-3 px-5 mt-3'>Order Now</Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item style={{maxHeight:"600px",position:"relative"}}>
         <img
           className="d-block w-100"
-          src={pizzaa}
+          src={pizza1}
           alt="Second slide"
         />
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <Carousel.Caption style={{position:"absolute",top:"20%",left:"20px"}}>
+          <h1 style={{color:"smokewhite",fontWeight:"bolder", fontFamily:"cursive"}}>Any time is a good time for pizza.</h1>
+          <Button className='bg-warning py-3 px-5 mt-3'>Order Now</Button>
+
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item style={{maxHeight:"600px",position:"relative"}}>
         <img
           className="d-block w-100"
-          src={pizzaa}
+          src={pizza3}
           alt="Third slide"
         />
 
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+        <Carousel.Caption style={{position:"absolute",top:"20%",left:"30px"}}>
+          <h1 style={{color:"smokewhite",fontWeight:"bolder", fontFamily:"cursive"}}>The cheesier, the better!</h1>
+          <Button className='bg-warning py-3  px-5 mt-3 '>Order Now</Button>
+
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

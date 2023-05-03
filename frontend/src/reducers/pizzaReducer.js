@@ -25,6 +25,8 @@ export const getAllPizzasReducer = (state = {pizzas:[]}, action) => {
 
     }
 
+    
+
 }
 
 export const addPizzaReducer = (state = {}, action) => {
@@ -48,3 +50,4 @@ export const addPizzaReducer = (state = {}, action) => {
         return state;
     }
   };
+

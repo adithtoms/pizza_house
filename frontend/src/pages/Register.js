@@ -25,7 +25,7 @@ function Register() {
         password,
         cpassword
       }
-      console.log(user);
+      // console.log(user);
       dispatch(registerUser(user))
       alert("Registration Successful, Please Login")
       window.location.href = '/login'

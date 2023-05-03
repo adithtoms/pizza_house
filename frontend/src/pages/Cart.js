@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {addToCart, deleteFromCart} from '../actions/cartActions'
 import CheckOut from '../components/CheckOut'
 
+
 function Cart() {
 
   const cartstate = useSelector(state => state.cartReducer)
@@ -28,7 +29,7 @@ function Cart() {
 
               </div>
               <div className='text-left m-2  p-2 w-100'>
-                <h4>{item.name}[{item.varients}]</h4>
+                <h4>{item.name}[{item.varient}]</h4>
                 <h5>Price: {item.quantity}*{item.prices[0][item.varients]}={item.price}</h5>
                 <h6 style={{ display: "inline" }}>Quantity :</h6>
                 {/* <i className='fa fa-minus' aria-hidden="true" onClick={()=>{dispatch(addToCart(item,(item.varients),item.quantity-1))}}></i> */}
@@ -61,6 +62,8 @@ function Cart() {
         </div>
 
       </div>
+
+
 
     </div>
   )

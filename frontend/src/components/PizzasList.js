@@ -3,6 +3,9 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllPizzas } from '../actions/pizzaActions'
 import { Button, Table } from "react-bootstrap";
+import { Link, } from 'react-router-dom'
+import axios from 'axios';
+
 
 function PizzasList() {
 
@@ -15,6 +18,11 @@ function PizzasList() {
     useEffect(() => {
         dispatch(getAllPizzas())
     }, [])
+
+   const handleDelete=async(id)=>{
+     const res= await axios.delete('/deletepizza/'+id)
+     alert(res.data.message)
+    }
 
     return (
         <>
@@ -55,8 +63,8 @@ function PizzasList() {
                                                     </td>
                                                     <td>{pizza.category}</td>
                                                     <td>
-                                                     <Button>Edit</Button>
-                                                     <Button className='bg-danger ms-2'>Delete</Button>
+                                                    <Link to={`/admin/edit/${pizza._id}`}> <Button>Edit</Button></Link>
+                                                     <Button className='bg-danger ms-2' onClick={()=>handleDelete(pizza._id)}>Delete</Button>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -68,6 +76,7 @@ function PizzasList() {
                         )}
 
             </div>
+           
         </>
     )
 }

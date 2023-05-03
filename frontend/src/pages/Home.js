@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import PizzaCard from '../components/PizzaCard'
 import { getAllPizzas } from '../actions/pizzaActions'
 import Banner from '../components/Banner';
+import Filters from '../components/Filters'
+import Footer from '../components/Footer';
 
 
 function Home() {
@@ -22,6 +24,7 @@ function Home() {
   return (
     <>
     <Banner/>
+    <Filters/>
       <div  className='row justify-content-center '>
         {loading ? (<h1>Loading..</h1>) 
         : error ? (<h1>Something went wrong</h1>) 
@@ -35,7 +38,9 @@ function Home() {
         )}
 
       </div>
+      <Footer/>
     </>
+   
   )
 }
 

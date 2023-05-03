@@ -1,4 +1,4 @@
-export const addToCart=(pizza,varients,quantity)=>(dispatch,getState)=>{
+export const addToCart=(pizza,varient,quantity)=>(dispatch,getState)=>{
 
  
 
@@ -6,10 +6,10 @@ export const addToCart=(pizza,varients,quantity)=>(dispatch,getState)=>{
     name:pizza.name,
     _id:pizza._id,
     image:pizza.image,
-    varients:varients,
+    varient:varient,
     quantity:Number(quantity),
-    prices:Number(pizza.price),
-    price:Number(pizza.price[0][varients]*quantity),
+    prices:pizza.price,
+    price:pizza.price[0][varient]*quantity,
     
   }
   console.log(cartItem);

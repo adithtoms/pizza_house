@@ -8,6 +8,10 @@ import Register from './pages/Register'
 import {BrowserRouter, Route,  Routes } from 'react-router-dom'
 import Orders from './pages/Orders';
 import Admin from './pages/Admin';
+import EditPizza from './components/EditPizza';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
@@ -17,13 +21,16 @@ function App() {
    <BrowserRouter>
      <Routes>
        <Route path='/' exact Component={Home}/>
-       <Route path='/admin' Component={Admin}/>
+       <Route path='/admin/*' Component={Admin}/>
        <Route path='/cart' exact Component={Cart}/>
        <Route path='/login' exact Component={Login}/>
        <Route path='/order' exact Component={Orders}/>
        <Route path='/register' exact Component={Register}/>
+       <Route path='/admin/edit/:id' Component={EditPizza}></Route>
      </Routes>
    </BrowserRouter>
+  
+
 
     </>
   );

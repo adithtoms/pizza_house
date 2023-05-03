@@ -11,7 +11,7 @@ function CheckOut({subTotal}) {
 
  const tokenHandler=(token)=>{
     dispatch(placeOrder(token,subTotal))
-    console.log(token);
+    // console.log(token);
  }
 
   return (

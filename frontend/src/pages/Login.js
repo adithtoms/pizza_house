@@ -17,7 +17,7 @@ function Login() {
 
   const handlelogin = () => {
     const user = {email,password}
-    console.log(user);
+    // console.log(user);
     dispatch(loginUser(user))
   }
 

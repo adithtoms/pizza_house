@@ -5,7 +5,6 @@ import AddPizza from '../components/AddPizza';
 import OrderList from '../components/OrdersList';
 import PizzasList from '../components/PizzasList';
 import {  useSelector } from 'react-redux';
-import EditPizza from '../components/EditPizza';
 
 function Admin() {
    const userState=useSelector(state=>state.loginUserReducer)

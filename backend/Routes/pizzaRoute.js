@@ -33,39 +33,13 @@ router.post("/addpizza", async (req, res) => {
   }
 });
 
-router.post("/getpizzabyid", async (req, res) => {
-  const pizzaId = req.body.pizzaId;
+router.delete("/deletepizza/:id", async (req, res) => {
+  const id = req.params.id;
   try {
-    const pizza = await Pizza.findOne({ _id: pizzaId });
-    res.send(pizza);
+    const result = await Pizza.deleteOne({ _id: id });
+    res.status(200).json({ message: "Pizza deleted", data: result });
   } catch (error) {
-    res.json({ message: error });
-  }
-});
-
-router.post("/updatepizza", async (req, res) => {
-  const updatedPizza = req.body.updatedPizza;
-  try {
-    const pizza = await Pizza.findOne({ _id: updatedPizza._id });
-    (pizza.name = updatedPizza.name),
-      (pizza.description = updatedPizza.description),
-      (pizza.image = updatedPizza.image),
-      (pizza.category = updatedPizza.category),
-      (pizza.price = [updatedPizza.price]);
-    await pizza.save();
-    res.status(200).send("Pizza Update Success");
-  } catch (error) {
-    res.status(400).json({ message: error });
-  }
-});
-
-router.post("/deletepizza", async (req, res) => {
-  const pizzaId = req.body.pizzaId;
-  try {
-    await Pizza.findOneAndDelete({ _id: pizzaId });
-    res.status(200).send("Pizza Deleted");
-  } catch (error) {
-    res.status(404).json({ message: error });
+    res.status(400).json({ message: "Something went wrong" });
   }
 });
 export default router

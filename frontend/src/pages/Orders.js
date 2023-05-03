@@ -8,7 +8,7 @@ function OrdersPage() {
   const orderState = useSelector(state => state.getUserOrderReducer)
   const { error, loading, orders } = orderState
 
-  console.log(orders);
+  // console.log(orders);
 
   const dispatch = useDispatch()
 
